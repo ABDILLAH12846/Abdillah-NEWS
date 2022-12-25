@@ -17,6 +17,7 @@ export const Navbar = () => {
         <>
             <div className="header">
                 <img alt='kamu'
+                className='savedImg'
                     src="https://img.icons8.com/material-rounded/24/000000/menu--v1.png"
                 />
                 <Link to='/'>

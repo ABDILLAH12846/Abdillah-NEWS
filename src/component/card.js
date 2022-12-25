@@ -19,7 +19,9 @@ export const Card = ({ data }) => {
                         </div>
                     </div>
                     <div className="tombol">
-                        <span className="read">Read</span>
+                        <a href={data.url}>
+                            <span className="read">Read</span>
+                        </a>
                         <span className="save">Save</span>
                     </div>
                 </div>

@@ -8,7 +8,7 @@ export const Search = () => {
     const { title } = useParams()
     const url = `https://newsapi.org/v2/everything?q=${title}&apiKey=9b40e5a77da44ea6b5d2971d517f5247`
     const dispach = useDispatch()
-    const user = useSelector((state) => state.arti.entities)
+    const {entities,loading} = useSelector((state) => state.arti)
     useEffect(() => {
         const fetching = () => {
             dispach(fetchUs(url))
@@ -17,7 +17,12 @@ export const Search = () => {
     }, [url])
     return (
         <div className='content4 isi'>
-            {user.map((val, ind) => (
+            {
+            loading
+            ?
+            <p>Loading</p>
+            :
+            entities.map((val, ind) => (
                 <Card data={val} key={ind} />
                 // <div key={ind}>{JSON.stringify(val.source)} & {tgl}</div>
             ))}
