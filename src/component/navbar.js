@@ -16,10 +16,12 @@ export const Navbar = () => {
     return (
         <>
             <div className="header">
-                <img alt='kamu'
-                className='savedImg'
-                    src="https://img.icons8.com/material-rounded/24/000000/menu--v1.png"
-                />
+                <Link to='/saved'>
+                    <img alt='kamu'
+                        className='savedImg'
+                        src="https://img.icons8.com/material/24/null/bookmark-outline.png"
+                    />
+                </Link>
                 <Link to='/'>
 
                     <h1>Hacktiv News</h1>

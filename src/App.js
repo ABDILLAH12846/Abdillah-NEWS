@@ -3,6 +3,7 @@ import { Navbar } from "./component/navbar";
 import "./App.css";
 import { Article } from "./pages/article";
 import { Search } from "./pages/search";
+import { Saved } from "./pages/saved";
 
 function App() {
   const date = new Date()
@@ -23,6 +24,7 @@ function App() {
         <Route path="/pro" element={<Article linkUrl={`everything?q=programming${tgl}`} />} />
         <Route path="/covid" element={<Article linkUrl={`everything?q=covid-19${tgl}`} />} />
         <Route path="/eco" element={<Article linkUrl={`everything?q=economy${tgl}`} />} />
+        <Route path="/saved" element={<Saved />} />
         <Route path="/search/:title" element={<Search />} />
       </Routes>
     </div>

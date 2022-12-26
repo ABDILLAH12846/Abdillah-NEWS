@@ -2,12 +2,17 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none !important;
 }
 .view {
   width: 100%;
   min-height: 100vh;
   padding: 24px 48px;
   margin-top: 60px;
+}
+.gambar_kamu{
+  width: 80%;
+  margin: 40% 10%;
 }
 .view .header {
   top: 0;

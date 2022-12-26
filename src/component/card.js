@@ -1,6 +1,11 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { addSaved, deleteSaved } from '../redux/saveredux'
 
 export const Card = ({ data }) => {
+    const dispach = useDispatch()
+    const {saved} = useSelector((state)=>state.saved)
+    const isSaved = saved.find((val)=>val.url === data.url)
     return (
         <div className="card">
             <div className="wrapper">
@@ -22,7 +27,15 @@ export const Card = ({ data }) => {
                         <a href={data.url}>
                             <span className="read">Read</span>
                         </a>
-                        <span className="save">Save</span>
+                        <span className="save"
+                        onClick={()=>{
+                            isSaved
+                            ?
+                            dispach(deleteSaved(data.url))
+                            :
+                            dispach(addSaved(data))
+                        }}
+                        >{isSaved?'Saved':'Save'}</span>
                     </div>
                 </div>
             </div>
